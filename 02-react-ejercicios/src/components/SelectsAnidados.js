@@ -6,7 +6,7 @@ const SelectsAnidados = () => {
   const [town, setTown] = useState("");
   const [suburb, setSuburb] = useState("");
 
-  const TOKEN = "d81a7ac7-976d-4e1e-b7d3-b1979d791b6c";
+  // const TOKEN = "d81a7ac7-976d-4e1e-b7d3-b1979d791b6c";
 
   return (
     <div>
@@ -14,7 +14,7 @@ const SelectsAnidados = () => {
       <h3>México</h3>
       <SelectList
         title="estado"
-        url={`https://api-sepomex.hckdrk.mx/query/get_estados?token=${TOKEN}`}
+        url="https://api.copomex.com/query/get_estados?token=pruebas"
         handleChange={(e) => {
           setState(e.target.value);
         }}
@@ -22,7 +22,7 @@ const SelectsAnidados = () => {
       {state && (
         <SelectList
           title="municipios"
-          url={`https://api-sepomex.hckdrk.mx/query/get_municipio_por_estado/${state}?token=${TOKEN}`}
+          url={`https://api.copomex.com/query/get_municipio_por_estado/Aguascalientes?token=pruebas`}
           handleChange={(e) => {
             setTown(e.target.value);
           }}
@@ -31,7 +31,7 @@ const SelectsAnidados = () => {
       {town && (
         <SelectList
           title="colonia"
-          url={`https://api-sepomex.hckdrk.mx/query/get_colonia_por_municipio/${town}?token=${TOKEN}`}
+          url={`https://api.copomex.com/query/get_colonia_por_municipio/Xochimilco?token=pruebas`}
           handleChange={(e) => {
             setSuburb(e.target.value);
           }}
